@@ -5,6 +5,8 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 const all = 'https://'
+const text = document.querySelectorAll('body')
+const spaces = document.createElement("p");
 
 chrome.action.onClicked.addListener(async (tab) => {
   if (tab.url.startsWith(all)) {
@@ -21,10 +23,8 @@ chrome.action.onClicked.addListener(async (tab) => {
 
   if (nextState === "ON") {
       // Insert the CSS file when the user turns the extension on
-      await chrome.scripting.insertCSS({
-        // change this
-        files: ["testing.css"],
-        target: { tabId: tab.id },
+      await chrome.tabs.executeScript({
+        file: "insert.js"
       });
     } else if (nextState === "OFF") {
       // Remove the CSS file when the user turns the extension off
