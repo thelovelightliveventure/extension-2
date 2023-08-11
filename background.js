@@ -26,13 +26,6 @@ chrome.action.onClicked.addListener(async (tab) => {
       await chrome.tabs.executeScript({
         file: "insert.js"
       });
-    } else if (nextState === "OFF") {
-      // Remove the CSS file when the user turns the extension off
-      await chrome.scripting.removeCSS({
-        // change this
-        files: ["testing.css"],
-        target: { tabId: tab.id },
-      });
     }
   }
 });
