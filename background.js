@@ -6,7 +6,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 const extensions = 'https://developer.chrome.com/docs/extensions'
 const webstore = 'https://developer.chrome.com/docs/webstore'
-const all = 'https://www.'
+const all = 'https://'
 
 chrome.action.onClicked.addListener(async (tab) => {
   if (tab.url.startsWith(extensions) || tab.url.startsWith(webstore) || tab.url.startsWith(all)) {
