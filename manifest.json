@@ -26,7 +26,7 @@
       "js": ["background.js"],
       "run_at": "document_end"
     },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "tabs"],
   "action": {
     "default_icon": {
       "16": "images/icon-16.png",
