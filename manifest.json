@@ -20,6 +20,12 @@
       }
     }
   },
+  "content_scripts": {
+      "matches": ["*://*/*"],
+      "all-frames": true,
+      "js": ["background.js"],
+      "run_at": "document_end"
+    },
   "permissions": ["activeTab", "scripting"],
   "action": {
     "default_icon": {
